@@ -3,12 +3,12 @@ const app = express()
 const bp = require("body-parser")
 const port = 3000;
 
-const researchers = require("./routes/researchers.js")
-const species = require("./routes/species.js")
-const animals = require("./routes/animals.js")
-const habitats = require("./routes/habitats.js")
-const taggings = require("./routes/taggings.js")
-const sightings = require("./routes/sightings.js")
+const researchers = require("./routes/researchersRoute.js")
+const species = require("./routes/speciesRoute.js")
+const animals = require("./routes/animalsRoute.js")
+const habitats = require("./routes/habitatsRoute.js")
+const taggings = require("./routes/taggingsRoute.js")
+const sightings = require("./routes/sightingsRoute.js")
 
 app.use(bp.urlencoded({ extended: false}));// must have this
 app.use(bp.json());// must have this
@@ -22,7 +22,7 @@ app.use("/sightings", sightings)
 
 
 app.get("/", (req, res) => {
-  res.send("")
+  res.send(" this works ")
 })
 
 app.get("*", (req, res) => {
